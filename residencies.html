@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Spazio Sassetti operates as an artist residency program in the heart of Florence, offering artists one-month residencies with the culmination of a two-week presentation.">
+<meta name="keywords" content="Spazio Sassetti, Artist Residency, Exhibition Space, Florence, Center, Odeon, Sassetti residency">
+<meta name="author" content="Spazio Sassetti">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Spazio Sassetti">
+<meta property="og:image" content="images/SS1.png">
+    <title>Spazio Sassetti – Residencies</title>
+    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<header class="sticky-header">
+    <div class="site-title">Spazio Sassetti</div>
+    <nav>
+        <a href="about.html">About</a>
+        <a href="residencies.html">Residencies</a>
+        <a href="#" id="contact-link">Contact</a>
+    </nav>
+</header>
+
+<div class="popup-overlay" id="popup-overlay">
+    <div class="popup-form" id="popup-form">
+        <span class="close-btn" id="close-popup">&times;</span>
+        <h3>Contact Us</h3>
+        <br>
+
+        <!-- SUCCESS MESSAGE -->
+        <div id="form-success-message" style="display: none;">
+            <p>Thank you! Your message has been sent.</p>
+        </div>
+
+        <!-- FORM -->
+        <form id="contact-form" action="https://formspree.io/f/mnnjozbv" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+
+
+<body>
+
+    <img class="logo" src="images/logo.jpg" alt="Spazio Sassetti logo">
+<br>
+<hr>
+
+    <section class="project-section">
+        <div class="project-header">
+            <span>Project 1</span>
+            <span>Sedrick Chisom</span>
+            <span>02–17–2025</span>
+        </div>
+    
+        <div class="project-content">
+            <div class="project-image">
+                <img src="images/sedrick-chisom.jpg" alt="Sedrick Chisom">
+                <p class="image-caption">
+                    Sedrick Chisom, photographed by Nancy Kote. Courtesy of CLEARING New York / Los Angeles.
+                </p>
+            </div>
+    
+            <div class="project-text">
+                <p>Spazio Sassetti welcomes its first artist in residency, Sedrick Chisom.</p>
+<br>
+                <p><b>Sedrick Chisom</b> (b. 1989, Philadelphia) lives and works in Brooklyn, NY. He received a full scholarship to study at Cooper Union, where he completed his BFA in 2016 and was awarded the Jacques and Natasha Gelman Foundation Award for Exceptional Ability. In 2018, he received his MFA from the Mason Gross School of the Arts at Rutgers University.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+   
+   
+    <footer class="footer">
+        <div class="footer-column">
+            <p>©Spazio Sassetti</p>
+        </div>
+    
+        <div class="footer-column">
+            <p>Via dei Sassetti 1, 50123 Florence, Italy</p>
+        </div>
+    
+        <div class="footer-column">
+            <p><a href="mailto:info@spaziosassetti.com">info@spaziosassetti.com</a></p>
+        </div>
+
+        <div class="footer-instagram">
+            <a href="https://www.instagram.com/spaziosassetti/" target="_blank">
+                <img src="images/instagram-icon.svg" alt="Instagram" class="instagram-icon">
+            </a>
+        </div>
+    </footer>
+    
+    <script>
+        const contactLink = document.getElementById('contact-link'); // The "Contact" link in the nav
+        const popupOverlay = document.getElementById('popup-overlay');
+        const closePopup = document.getElementById('close-popup');
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('form-success-message');
+    
+        // OPEN POPUP
+        contactLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            popupOverlay.style.display = 'flex';
+        });
+    
+        // CLOSE POPUP (Click X or Outside)
+        closePopup.addEventListener('click', function () {
+            popupOverlay.style.display = 'none';
+        });
+    
+        popupOverlay.addEventListener('click', function (e) {
+            if (e.target === popupOverlay) {
+                popupOverlay.style.display = 'none';
+            }
+        });
+    
+        // FORM SUBMIT HANDLER (Formspree AJAX)
+        contactForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+    
+            const formData = new FormData(contactForm);
+    
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+    
+                if (response.ok) {
+                    contactForm.style.display = 'none';
+                    successMessage.style.display = 'block';
+                } else {
+                    alert('There was a problem sending your message. Please try again later.');
+                }
+            } catch (error) {
+                alert('Something went wrong. Please try again.');
+            }
+        });
+    </script>
+    
+
+    
+
+</body>
+</html>
