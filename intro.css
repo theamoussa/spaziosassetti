@@ -23,8 +23,9 @@ body {
   }
   
   #logo {
-    max-width: 600px;
+    max-width: 80%; /* Limits the logo width to 80% of the viewport width */
+    width: 300px; /* Ensures it’s not too small on mobile */
+    height: auto; /* Keeps aspect ratio */
     z-index: 2;
     margin-bottom: 100px;
-  }
-  
+}

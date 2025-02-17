@@ -317,3 +317,94 @@ a:hover::after {
 .project-text strong {
     font-weight: 600;
 }
+
+
+@media (max-width: 768px) {
+    /* Header */
+    .sticky-header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    nav {
+        margin-top: 5px;
+    }
+
+    /* Grid Section */
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-item {
+        padding: 10px;
+    }
+
+    .text-block{
+        text-align: center;
+    }
+
+    /* Split Section */
+    .split-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .split-text, .split-image {
+        padding: 20px;
+    }
+
+    .split-image iframe {
+        height: 250px;
+    }
+
+    /* Footer */
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .footer-instagram {
+        align-self: flex-end;
+    }
+
+    /* Pop-up Form */
+    .popup-form {
+        width: 95%;
+        padding: 15px;
+    }
+
+    /* Text adjustments */
+    body {
+        font-size: 14px;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+        .project-content {
+            flex-direction: column;
+        }
+    
+        .project-image, .project-text {
+            flex: 1 1 auto;
+            width: 100%;
+        }
+    
+        .project-section {
+            padding: 20px;
+        }
+    
+        .project-header {
+            flex-direction: column;
+            gap: 5px;
+            font-size: 10px;
+        }
+    
+        .image-caption {
+            font-size: 9px;
+        }
+
+}
