@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Spazio Sassetti operates as an artist residency program in the heart of Florence, offering artists one-month residencies with the culmination of a two-week presentation.">
+<meta name="keywords" content="Spazio Sassetti, Artist Residency, Exhibition Space, Florence, Center, Odeon, Sassetti residency">
+<meta name="author" content="Spazio Sassetti">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Spazio Sassetti">
+<meta property="og:image" content="images/SS1.png">
+<meta property="og:url" content="https://spaziosassetti.com">
+  
+  <title>Spazio Sassetti</title>
+  <link rel="stylesheet" href="intro.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const introScreen = document.getElementById("intro-screen");
+      const fadeDuration = 4000;
 
+      setTimeout(() => {
+        introScreen.classList.add("fade-out");
+        setTimeout(() => {
+          introScreen.style.display = "none";
+          window.location.href = "about.html"; // Redirect to homepage
+        }, 1000);
+      }, fadeDuration);
+
+      introScreen.addEventListener("click", () => {
+        introScreen.classList.add("fade-out");
+        setTimeout(() => {
+          introScreen.style.display = "none";
+          window.location.href = "about.html"; // Redirect to homepage
+        }, 1000);
+      });
+    });
+  </script>
+
+
+</head>
+<body>
+  <div id="intro-screen">
+    <img src="images/logo.jpg" alt="Spazio Sassetti Logo" id="logo">
+  </div>
+<script>
+ 
+</script>
+</body>
+</html>

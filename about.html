@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Spazio Sassetti operates as an artist residency program in the heart of Florence, offering artists one-month residencies with the culmination of a two-week presentation.">
+<meta name="keywords" content="Spazio Sassetti, Artist Residency, Exhibition Space, Florence, Center, Odeon, Sassetti residency">
+<meta name="author" content="Spazio Sassetti">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Spazio Sassetti">
+<meta property="og:image" content="images/SS1.png">
+    <title>Spazio Sassetti – Homepage</title>
+    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<header class="sticky-header">
+    <div class="site-title">Spazio Sassetti</div>
+    <nav>
+        <a href="about">About</a>
+        <a href="residencies">Residencies</a>
+        <a href="#" id="contact-link">Contact</a>
+    </nav>
+</header>
+
+<div class="popup-overlay" id="popup-overlay">
+    <div class="popup-form" id="popup-form">
+        <span class="close-btn" id="close-popup">&times;</span>
+        <h3>Contact Us</h3>
+        <br>
+
+        <!-- SUCCESS MESSAGE -->
+        <div id="form-success-message" style="display: none;">
+            <p>Thank you! Your message has been sent.</p>
+        </div>
+
+        <!-- FORM -->
+        <form id="contact-form" action="https://formspree.io/f/mnnjozbv" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+
+
+<body>
+
+    <img class="logo" src="images/logo.jpg" alt="Spazio Sassetti logo">
+
+
+
+    <div class="grid-container">
+        <div class="grid-item text-block">
+            <h3>Spazio Sassetti operates as an artist residency program in the
+                heart of Florence, offering artists one month residencies with
+                the culmination of a two week presentation, showcasing the
+                work they have produced in this time. All residencies will be
+                conducted one at a time.</h3>
+        </div>
+        <div class="grid-item image-block">
+            <img src="images/SS1.png" alt="Exhibition Space">
+        </div>
+
+
+    </div>
+
+    <section class="split-section">
+        <div class="split-text">
+            <h2>Location</h2>
+            <p>Spazio Sassetti is located at <b>via dei Sassetti n.1</b> at the second floor of <b>Palazzo dello Strozzino</b>, a
+                Renaissance palace in the historical center of Florence, Italy. The stone Renaissance facade is located
+                on Piazza degli Strozzi, adjaent to the Southeast corner of the imposing <b>Palazzo Strozzi</b>. The
+                Northern façade on Via dei Anselmi houses the entrance to the <b>Odeon Cinema</b>, one of earliest and
+                most beautiful movie theaters in all of Italy. The palace is surrounded by lively shops, bars, restaurants
+                and cafes and is just a short walk away from most of the city’s masterpieces of renaissance art and
+                architecture.</p>
+        </div>
+        <div class="split-image">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.099312862676!2d11.250123276238416!3d43.77079724481709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a5506f090317f%3A0x95ce742e594f0130!2sSpazio%20Sassetti!5e0!3m2!1sen!2sit!4v1739814841018!5m2!1sen!2sit" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+   
+   
+    <footer class="footer">
+        <div class="footer-column">
+            <p>©Spazio Sassetti</p>
+        </div>
+    
+        <div class="footer-column">
+            <p>Via dei Sassetti 1, 50123 Florence, Italy</p>
+        </div>
+    
+        <div class="footer-column">
+            <p><a href="mailto:info@spaziosassetti.com">info@spaziosassetti.com</a></p>
+        </div>
+
+        <div class="footer-instagram">
+            <a href="https://www.instagram.com/spaziosassetti/" target="_blank">
+                <img src="images/instagram-icon.svg" alt="Instagram" class="instagram-icon">
+            </a>
+        </div>
+    </footer>
+    
+    <script>
+        const contactLink = document.getElementById('contact-link'); // The "Contact" link in the nav
+        const popupOverlay = document.getElementById('popup-overlay');
+        const closePopup = document.getElementById('close-popup');
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('form-success-message');
+    
+        // OPEN POPUP
+        contactLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            popupOverlay.style.display = 'flex';
+        });
+    
+        // CLOSE POPUP (Click X or Outside)
+        closePopup.addEventListener('click', function () {
+            popupOverlay.style.display = 'none';
+        });
+    
+        popupOverlay.addEventListener('click', function (e) {
+            if (e.target === popupOverlay) {
+                popupOverlay.style.display = 'none';
+            }
+        });
+    
+        // FORM SUBMIT HANDLER (Formspree AJAX)
+        contactForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+    
+            const formData = new FormData(contactForm);
+    
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+    
+                if (response.ok) {
+                    contactForm.style.display = 'none';
+                    successMessage.style.display = 'block';
+                } else {
+                    alert('There was a problem sending your message. Please try again later.');
+                }
+            } catch (error) {
+                alert('Something went wrong. Please try again.');
+            }
+        });
+    </script>
+    
+
+    
+
+</body>
+</html>
