@@ -382,6 +382,7 @@ a:hover::after {
 
     .logo {
         width: 200px;
+        align-self: center;
     }
 
         .project-content {
