@@ -23,9 +23,18 @@ body {
   }
   
   #logo {
-    max-width: 80%; /* Limits the logo width to 80% of the viewport width */
-    width: 300px; /* Ensures it’s not too small on mobile */
+    max-width: 100%; /* Limits the logo width to 80% of the viewport width */
+    width: 100%; /* Ensures it’s not too small on mobile */
     height: auto; /* Keeps aspect ratio */
     z-index: 2;
     margin-bottom: 100px;
+}
+
+
+@media (max-width: 768px) {
+  #logo {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
 }
