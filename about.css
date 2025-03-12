@@ -293,7 +293,7 @@ a:hover::after {
 }
 
 .project-image {
-    flex: 0 0 60%;
+    flex: 0 0 50%;
     position: relative;
 }
 
