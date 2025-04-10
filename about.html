@@ -17,38 +17,13 @@
 <header class="sticky-header">
     <div class="site-title">Spazio Sassetti</div>
     <nav>
+        <a href="exhibitions.html">Exhibitions</a>
+        <a href="residencies.html">Residency</a>
         <a href="about.html">About</a>
-        <a href="residencies.html">Residencies</a>
-        <a href="#" id="contact-link">Contact</a>
     </nav>
 </header>
 
-<div class="popup-overlay" id="popup-overlay">
-    <div class="popup-form" id="popup-form">
-        <span class="close-btn" id="close-popup">&times;</span>
-        <h3>Contact Us</h3>
-        <br>
 
-        <!-- SUCCESS MESSAGE -->
-        <div id="form-success-message" style="display: none;">
-            <p>Thank you! Your message has been sent.</p>
-        </div>
-
-        <!-- FORM -->
-        <form id="contact-form" action="https://formspree.io/f/mnnjozbv" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button type="submit">Send</button>
-        </form>
-    </div>
-</div>
 
 
 <body>
@@ -59,23 +34,23 @@
 
     <div class="grid-container">
         <div class="grid-item text-block">
-            <h3>Spazio Sassetti operates as an artist residency program in the
-                heart of Florence, offering artists one month residencies with
-                the culmination of a two week presentation, showcasing the
-                work they have produced in this time. All residencies will be
-                conducted one at a time.</h3>
+            <div class="project-header">
+                <span>Spazio Sassetti is open by appointment only<br>
+                To visit, email <a href="mailto:spaziosassetti@gmail.com">spaziosassetti@gmail.com</a></span>
+            </div>
         </div>
         <div class="grid-item image-block">
             <img src="images/SS1.png" alt="Exhibition Space">
         </div>
+    </div>
 
 
     </div>
 
     <section class="split-section">
         <div class="split-text">
-            <h2>Location</h2>
-            <p>Spazio Sassetti is located at <b>via dei Sassetti n.1</b> at the second floor of <b>Palazzo dello Strozzino</b>, a
+            <p class="project-header">Location</p>
+            <p class="project-text">Spazio Sassetti is located at <b>via dei Sassetti n.1</b> at the second floor of <b>Palazzo dello Strozzino</b>, a
                 Renaissance palace in the historical center of Florence, Italy. The stone Renaissance facade is located
                 on Piazza degli Strozzi, adjaent to the Southeast corner of the imposing <b>Palazzo Strozzi</b>. The
                 Northern façade on Via dei Anselmi houses the entrance to the <b>Odeon Cinema</b>, one of earliest and
@@ -90,16 +65,13 @@
    
    
     <footer class="footer">
-        <div class="footer-column">
-            <p>©Spazio Sassetti</p>
-        </div>
     
         <div class="footer-column">
-            <p>Via dei Sassetti 1, 50123 Florence, Italy</p>
+            <p>Via dei Sassetti 1, Florence, Italy</p>
         </div>
     
-        <div class="footer-column">
-            <p><a href="mailto:info@spaziosassetti.com">info@spaziosassetti.com</a></p>
+        <div class="footer-column center">
+            <p><a href="mailto:spaziosassetti@gmail.com">spaziosassetti@gmail.com</a></p>
         </div>
 
         <div class="footer-instagram">
@@ -109,58 +81,7 @@
         </div>
     </footer>
     
-    <script>
-        const contactLink = document.getElementById('contact-link'); // The "Contact" link in the nav
-        const popupOverlay = document.getElementById('popup-overlay');
-        const closePopup = document.getElementById('close-popup');
-        const contactForm = document.getElementById('contact-form');
-        const successMessage = document.getElementById('form-success-message');
     
-        // OPEN POPUP
-        contactLink.addEventListener('click', function (e) {
-            e.preventDefault();
-            popupOverlay.style.display = 'flex';
-        });
-    
-        // CLOSE POPUP (Click X or Outside)
-        closePopup.addEventListener('click', function () {
-            popupOverlay.style.display = 'none';
-        });
-    
-        popupOverlay.addEventListener('click', function (e) {
-            if (e.target === popupOverlay) {
-                popupOverlay.style.display = 'none';
-            }
-        });
-    
-        // FORM SUBMIT HANDLER (Formspree AJAX)
-        contactForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
-    
-            const formData = new FormData(contactForm);
-    
-            try {
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-    
-                if (response.ok) {
-                    contactForm.style.display = 'none';
-                    successMessage.style.display = 'block';
-                } else {
-                    alert('There was a problem sending your message. Please try again later.');
-                }
-            } catch (error) {
-                alert('Something went wrong. Please try again.');
-            }
-        });
-    </script>
-    
-
     
 
 </body>
