@@ -296,7 +296,7 @@ a:hover::after {
 
 .project-text {
   flex: 1;
-  font-size: 14px; /* or any size you prefer */
+  font-size: clamp(12px, 1.2vw, 14px); /* or any size you prefer */
   text-align: justify;
   line-height: 1.6;
 }
@@ -450,165 +450,30 @@ a:hover::after {
     to {opacity: 1}
 }
 
-  
-  .current-exhibition .exhibition-img-container {
-    flex: 0 0 40%; /* Image takes 40% of the width */
-    margin-right: 20px; /* Space between image and text */
+
+
+
+@media (max-width: 768px) {
+  .project-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-  
-  .current-exhibition .exhibition-img {
-    width: 100%;
-    height: auto;
-    display: block;
+
+  .project-header span:nth-child(2) {
+    position: static;
+    transform: none;
   }
-  
-  .current-exhibition .exhibition-text {
-    flex: 1; /* Text container takes the remaining space */
+
+
+  .footer-column.center {
+    position: static;
+    transform: none;
+    text-align: left;
   }
-  
-  .current-exhibition .exhibition-title {
-    font-family: "Arial", sans-serif;
-    font-size: 20px;
-    margin-top: 20px;
-    text-decoration: none;
-    color: inherit;
+
+  .logo {
+    Width: 150px;
   }
-  
-  .current-exhibition .press-card-date {
-    font-size: 14px;
-    color: #555; /* Adjust color for date text */
-  }
-  
-
-        .exhibitions-wrapper {
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Sidebar Styling */
-        .sidebar {
-            font-family: "Arial", sans-serif;
-            font-size: clamp(15px, 1.6vw, 20px);
-            position: fixed;
-            margin-top: 10px;
-            left: 5%;
-            height: 100%;
-            width: 300px;
-            padding: 20px;
-        }
-
-        .sidebar .sidebar-link {
-            font-family: "Arial", sans-serif;
-            font-size: clamp(15px, 1.6vw, 20px);
-            display: block;
-            font-size: 18px;
-            font-weight: normal;
-            text-decoration: none;
-            color: #000;
-            margin-bottom: 10px;
-            transition: color 0.3s ease;
-        }
-
-        .sidebar-link.active {
-            font-weight: normal;
-            color: inherit;
-            text-decoration: underline;
-          }
-
-          .year-list {
-            list-style: none; /* Removes bullet points */
-            padding: 0; /* Removes extra padding */
-            margin: 0; /* Removes extra margin */
-        }
-        
-        .year-list li {
-            margin-bottom: 20px; /* Optional: Adds spacing between items */
-            margin-left: 20px;
-        }
-
-
-        #past-container {
-            display: block; /* Allow it to take up space but keep it off-screen */
-            opacity: 0; /* Fully transparent */
-            transform: translateY(100vh); /* Position it completely off-screen at the bottom */
-            transition: opacity 1s ease, transform 1s ease; /* Animation for both properties */
-          }
-          
-          /* Visible and animated state */
-          #past-container.visible {
-            opacity: 1; /* Fully visible */
-            transform: translateY(0); /* Slide to its normal position */
-          }
-
-        /* Main Content Styling */
-        .main-content {
-            margin-top: 10%;
-            margin-left: 220px;
-            padding: 20px;
-            width: 80vw;
-        }
-
-        .exhibitions-section {
-            margin-bottom: 20px;
-        }
-
-        .current-exhibition-item {
-            font-size: x-large;
-        }
-
-
-        .year-section {
-            margin-bottom: 20px;
-        }
-
-        .year-section h3 {
-            margin: 0;
-            font-size: 22px;
-            font-weight: normal;
-        }
-
-        html {
-            scroll-behavior: smooth;
-          }
-
-        .exhibition-item {
-            padding:  0;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .exhibition-item h3 {
-            margin: 0;
-            font-size: 18px;
-        }
-
-        .exhibition-item em {
-            font-style: italic;
-        }
-
-        /* Full-Width Horizontal Line */
-        .exhibition-item {
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-            width: 100%; /* Ensures full-width */
-        }
-
-        .exhibitions-section > h2 {
-            display: none; /* Hides Current and Past headings in main content */
-        }
-        
-        /* Hide Year Headings (e.g., 2024, 2023) in the Exhibitions Section */
-        .year-section > h3 {
-            display: none; /* Hides year headings in main content */
-        }
-
-
-
-        /* Set default typography styles */
-.thank-you-message, .content, select, input, button, select option, optgroup {
-    font-family: "calibria", sans-serif;
-    font-size: clamp(12px, 1.3vw, 18px);
-    color: #000;
-    line-height: 1.5;
 }
 
